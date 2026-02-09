@@ -50,9 +50,9 @@
       font-family: var(--font);
       color: var(--text);
       background:
-        radial-gradient(900px 500px at 70% 5%, rgba(255,122,0,.14), transparent 65%),
-        radial-gradient(700px 450px at 5% 20%, rgba(255,77,0,.10), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+        radial-gradient(1100px 620px at 80% -10%, rgba(255,122,0,.16), transparent 62%),
+        radial-gradient(900px 520px at -10% 20%, rgba(255,77,0,.10), transparent 58%),
+        linear-gradient(180deg, #050505 0%, #070707 45%, #050505 100%);
       overflow-x:hidden;
     }
 
@@ -69,8 +69,17 @@
           transparent 1px,
           transparent 10px
         );
-      opacity:.18;
+      opacity:.16;
       mix-blend-mode: overlay;
+      z-index:-2;
+    }
+    /* Vignette to separate background layers */
+    body:after{
+      content:"";
+      position:fixed; inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(1200px 700px at 50% 10%, rgba(0,0,0,0), rgba(0,0,0,.65));
       z-index:-1;
     }
 
@@ -99,7 +108,7 @@
       position:sticky; top:0; z-index:80;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      background: rgba(5,5,5,.78);
+      background: rgba(5,5,5,.82);
       border-bottom: 1px solid rgba(255,122,0,.30);
     }
     .toprow{
@@ -109,29 +118,33 @@
     }
 
     .brand{
-      display:flex; align-items:center; gap:10px;
-      min-width: 220px;
+      display:flex; align-items:center; gap:12px;
+      min-width: 0; /* allow shrink */
+      flex: 1 1 auto;
     }
-    .mark{
-      width:40px; height:40px;
-      border-radius: 12px;
-      background:
-        radial-gradient(10px 10px at 35% 30%, rgba(255,255,255,.50), transparent 60%),
-        linear-gradient(135deg, rgba(255,122,0,1), rgba(255,77,0,1));
-      box-shadow: 0 18px 55px rgba(255,122,0,.20);
-      position:relative;
+    .logo{
+      width: 56px;
+      height: 40px;
+      object-fit: contain;
+      display:block;
+      border: none;
+      outline: none;
+      border-radius: 0;
+      background: transparent;
+      flex: 0 0 auto;
     }
-    .mark:after{
-      content:"";
-      position:absolute; inset:10px;
-      border-radius: 10px;
-      border:1px solid rgba(255,255,255,.18);
+    .brand .textwrap{
+      min-width: 0; /* allow ellipsis */
     }
     .brand .title{
       font-family: var(--fontHead);
       font-size: 22px;
       letter-spacing: 1.2px;
       line-height:1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 62vw;
     }
     .brand .sub{
       font-size: 12px;
@@ -139,11 +152,16 @@
       margin-top: 2px;
       letter-spacing: .2px;
       font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 62vw;
     }
 
     /* Desktop nav */
     .nav{
       display:flex; align-items:center; gap: 16px;
+      flex: 0 0 auto;
     }
     .nav a{
       font-weight: 800;
@@ -177,6 +195,7 @@
       display:flex; align-items:center; gap: 10px;
       flex-wrap:wrap;
       justify-content:flex-end;
+      flex: 0 0 auto;
     }
     .phonepill{
       display:inline-flex; align-items:center; gap:10px;
@@ -266,13 +285,15 @@
     .hero-box{
       border-radius: var(--r22);
       background:
-        linear-gradient(135deg, rgba(255,122,0,.16), transparent 42%),
-        radial-gradient(600px 240px at 60% 0%, rgba(255,77,0,.12), transparent 70%),
-        rgba(255,255,255,.05);
+        linear-gradient(180deg, rgba(0,0,0,.68), rgba(0,0,0,.34)),
+        radial-gradient(700px 280px at 76% 10%, rgba(255,122,0,.18), transparent 62%),
+        radial-gradient(520px 240px at 15% 25%, rgba(255,77,0,.10), transparent 60%),
+        rgba(255,255,255,.04);
       box-shadow: var(--shadow);
       padding: 20px;
       position:relative;
       overflow:hidden;
+      border: 1px solid rgba(255,255,255,.10);
     }
     .hero-box:before{
       content:"";
@@ -280,7 +301,7 @@
       inset:-60px -80px auto auto;
       width: 220px; height: 220px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,122,0,.22), transparent 65%);
+      background: radial-gradient(circle at 30% 30%, rgba(255,122,0,.18), transparent 66%);
       pointer-events:none;
     }
 
@@ -328,12 +349,13 @@
       white-space: nowrap;
       overflow: hidden;
       font-family: var(--fontHead);
-      font-size: clamp(2.3rem, 7vw, 5rem);
+      font-size: clamp(2.1rem, 7vw, 3.2rem);
       line-height: 0.95;
       display: inline-block;
-      letter-spacing: 2px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       animation: blink 0.7s steps(2) infinite;
+      max-width: 100%;
     }
 
     .hero-sub{
@@ -359,7 +381,7 @@
       gap: 10px;
     }
     .fact{
-      background: rgba(0,0,0,.20);
+      background: rgba(0,0,0,.24);
       border-radius: var(--r16);
       padding: 14px;
       border: 1px solid rgba(255,255,255,.08);
@@ -420,6 +442,7 @@
       box-shadow: 0 10px 60px rgba(0,0,0,.45);
       position:relative;
       overflow:hidden;
+      border: 1px solid rgba(255,255,255,.08);
     }
     .block:before{
       content:"";
@@ -528,6 +551,13 @@
     @media (max-width: 860px){
       .nav{ display:none; }
       .phonepill{ display:none; }
+      .brand .title{ max-width: 58vw; font-size: 21px; }
+      .brand .sub{ max-width: 58vw; }
+    }
+    @media (max-width: 420px){
+      .brand .title{ max-width: 54vw; font-size: 20px; }
+      .brand .sub{ max-width: 54vw; }
+      .logo{ width: 52px; height: 38px; }
     }
     @media (min-width: 861px){
       #menuBtn{ display:none; }
@@ -755,6 +785,7 @@
         rgba(0, 0, 0, 1) 84%,
         rgba(0, 0, 0, 0)
       );
+      border: 1px solid rgba(255,255,255,.08);
     }
     .scorlling img{
       width:100%;
@@ -793,11 +824,11 @@
     ========================================================= */
     .splashbtn .button{
       --white: #ffffff;
-      --purple-100: #ffd1a8;  /* light orange */
-      --purple-200: #ffb36b;  /* mid orange */
-      --purple-300: #ff8f2a;  /* bright orange */
-      --purple-400: #ff7a00;  /* main orange */
-      --purple-500: #b84b00;  /* deep orange */
+      --purple-100: #ffd1a8;
+      --purple-200: #ffb36b;
+      --purple-300: #ff8f2a;
+      --purple-400: #ff7a00;
+      --purple-500: #b84b00;
       --radius: 18px;
 
       border-radius: var(--radius);
@@ -1076,8 +1107,8 @@
     <div class="container">
       <div class="toprow">
         <a class="brand" href="#home" data-route>
-          <span class="mark" aria-hidden="true"></span>
-          <span>
+          <img class="logo" src="images/icon.jpg" alt="Эвакуатор Астана" />
+          <span class="textwrap">
             <div class="title">ЭВАКУАТОР АСТАНА 24/7</div>
             <div class="sub">Подача 15–30 мин • Межгород • Бережно</div>
           </span>
@@ -1120,7 +1151,7 @@
             </div>
 
             <!-- (4) typing-text template -->
-            <span id="typing-text"></span>
+            <span id="typing-text">КРУГЛОСУТОЧНО</span>
 
             <p class="hero-sub">
               Эвакуатор в Астане: ДТП, поломка, не заводится, сложная погрузка. Работаем аккуратно и быстро — без лишних разговоров.
@@ -1225,7 +1256,6 @@
                 <!-- (5) splash button template used -->
                 <div class="block splashbtn">
                   <h2 style="margin:0 0 10px; font-size: 22px;">СРОЧНЫЙ ВЫЗОВ</h2>
-                  <p class="desc" style="margin:0 0 14px;">Нажмите — откроется звонок.</p>
 
                   <a href="tel:+77074534518" style="display:inline-block;">
                     <button class="button" type="button" aria-label="Позвонить эвакуатор">
@@ -1265,7 +1295,6 @@
 
         <div class="section">
           <h2>Услуги</h2>
-          <p class="desc">Коротко и по делу — то, что клиенту нужно увидеть за 5 секунд.</p>
 
           <div class="grid3">
             <!-- (1) neon-card template used -->
@@ -1297,7 +1326,6 @@
 
         <div class="section">
           <h2>Парк техники</h2>
-          <p class="desc">Фото/примеры работ. Картинки локальные: <b>images/tow-1.jpg ... tow-9.jpg</b>.</p>
 
           <!-- (3) scrolling template used -->
           <div class="scorlling" aria-label="Бегущая лента фотографий">
@@ -1494,7 +1522,6 @@
           <div class="grid2">
             <div class="block">
               <h2 style="margin:0 0 10px; font-size: 22px;">Заявка</h2>
-              <p class="desc" style="margin:0 0 14px;">Сообщение сформируется и откроется в WhatsApp.</p>
 
               <form id="leadForm">
                 <div class="field">
@@ -1647,7 +1674,6 @@
 
   <script>
     (function(){
-      const PHONE = "+77074534518";
       const WA = "https://wa.me/77074534518";
 
       // ===== Router (hash) =====
@@ -1710,16 +1736,15 @@
 
       // ===== (4) Typing animation (phrases) =====
       const texts = [
-        "ЭВАКУАТОР АСТАНА",
-        "ПОДАЧА 15–30 МИН",
-        "КРУГЛОСУТОЧНО 24/7"
+        "КРУГЛОСУТОЧНО",
+        "ЭВАКУАТОР"
       ];
       let tIndex = 0;
       let cIndex = 0;
       let isDeleting = false;
       const speed = 85;
-      const delayBeforeDeleting = 1400;
-      const delayBeforeTypingAgain = 240;
+      const delayBeforeDeleting = 1200;
+      const delayBeforeTypingAgain = 220;
 
       function typeText(){
         const el = document.getElementById("typing-text");
