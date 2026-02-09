@@ -4,50 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#0b0f1a" />
+  <meta name="theme-color" content="#070a12" />
 
-  <title>Эвакуатор Астана 24/7 — срочная подача за 15–30 минут</title>
-  <meta name="description" content="Эвакуатор в Астане 24/7. Срочная подача, аккуратная погрузка, межгород. Звоните: +7 707 453 45 18 или WhatsApp. Прозрачные цены." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Эвакуатор Астана 24/7 — срочная подача" />
-  <meta property="og:description" content="Эвакуатор в Астане 24/7. Срочная подача, межгород, помощь на дороге. +7 707 453 45 18" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="ru_RU" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!--
-    Google Ads / GTAG (если нужно — вставишь свой ID)
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-XXXXXXXXXX');
-    </script>
-  -->
+  <title>Эвакуатор Астана 24/7 — +7 707 453 45 18</title>
+  <meta name="description" content="Эвакуатор в Астане 24/7. Срочная подача 15–30 минут, аккуратная погрузка, межгород. Звоните/WhatsApp: +7 707 453 45 18." />
 
   <style>
+    /* =========================
+       BASE / LAYOUT
+    ========================== */
     :root{
       --bg0:#070a12;
-      --bg1:#0b0f1a;
+      --bg1:#0b1020;
       --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
       --border: rgba(255,255,255,.14);
       --text: rgba(255,255,255,.92);
       --muted: rgba(255,255,255,.68);
       --muted2: rgba(255,255,255,.52);
-      --brand: #7C3AED;
-      --brand2:#22D3EE;
-      --ok:#34D399;
-      --warn:#FBBF24;
-      --danger:#FB7185;
-      --shadow: 0 18px 70px rgba(0,0,0,.55);
-      --radius: 20px;
-      --radius2: 28px;
+
+      --brandCyan: #00ffff;
+      --brandPurple: #7C3AED;
+
       --max: 1160px;
+      --radius: 18px;
+      --radius2: 26px;
+
+      --text-color: rgba(255,255,255,.92); /* for typing cursor */
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
 
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
@@ -60,17 +43,14 @@
       color: var(--text);
       background:
         radial-gradient(1200px 700px at 15% 10%, rgba(124,58,237,.22), transparent 60%),
-        radial-gradient(900px 600px at 90% 25%, rgba(34,211,238,.18), transparent 55%),
-        radial-gradient(900px 500px at 50% 120%, rgba(34,211,238,.10), transparent 55%),
+        radial-gradient(900px 600px at 90% 25%, rgba(0,255,255,.14), transparent 55%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       overflow-x:hidden;
     }
-
     a{ color:inherit; text-decoration:none; }
-    button, input, textarea{ font-family:inherit; }
     .container{ width:100%; max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Top bar */
+    /* Topbar */
     .topbar{
       position:sticky; top:0; z-index:60;
       backdrop-filter: blur(14px);
@@ -80,8 +60,7 @@
     }
     .topbar .row{
       display:flex; align-items:center; justify-content:space-between;
-      padding:12px 0;
-      gap:12px;
+      padding:12px 0; gap:12px;
     }
     .brand{
       display:flex; align-items:center; gap:10px;
@@ -91,7 +70,7 @@
       width:38px; height:38px; border-radius: 14px;
       background:
         radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.45), transparent 60%),
-        linear-gradient(135deg, rgba(124,58,237,1), rgba(34,211,238,1));
+        linear-gradient(135deg, rgba(124,58,237,1), rgba(0,255,255,1));
       box-shadow: 0 14px 40px rgba(124,58,237,.25);
       position:relative;
     }
@@ -102,20 +81,17 @@
       border:1px solid rgba(255,255,255,.35);
       background: rgba(0,0,0,.10);
     }
-    .brand .t1{ font-weight:800; letter-spacing:.3px; line-height:1.1; }
+    .brand .t1{ font-weight:900; letter-spacing:.2px; line-height:1.1; }
     .brand .t2{ font-size:12px; color:var(--muted); margin-top:2px; }
 
-    .nav{
-      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
-      justify-content:center;
-    }
+    .nav{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:center; }
     .chip{
       padding:10px 12px;
       border-radius: 999px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.04);
       color: var(--muted);
-      font-weight: 650;
+      font-weight: 750;
       font-size: 13px;
       letter-spacing:.15px;
       transition: transform .12s ease, background .12s ease, border-color .12s ease, color .12s ease;
@@ -123,62 +99,17 @@
       user-select:none;
       white-space:nowrap;
     }
-    .chip:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.22); color: rgba(255,255,255,.85); }
+    .chip:hover{ transform: translateY(-1px); border-color: rgba(255,255,255,.22); color: rgba(255,255,255,.88); }
     .chip.active{
-      background: linear-gradient(135deg, rgba(124,58,237,.26), rgba(34,211,238,.18));
-      border-color: rgba(124,58,237,.35);
+      background: linear-gradient(135deg, rgba(124,58,237,.26), rgba(0,255,255,.12));
+      border-color: rgba(0,255,255,.28);
       color: rgba(255,255,255,.92);
     }
 
-    .top-cta{
-      display:flex; align-items:center; gap:10px;
-      min-width: 220px;
-      justify-content:flex-end;
-    }
-    .pill{
-      padding:9px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(255,255,255,.88);
-      font-weight:700;
-      font-size: 12.5px;
-      display:flex; align-items:center; gap:8px;
-    }
-    .dot{
-      width:8px; height:8px; border-radius: 999px;
-      background: var(--ok);
-      box-shadow: 0 0 0 5px rgba(52,211,153,.12);
-    }
-    .btn{
-      border:0;
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-weight: 850;
-      letter-spacing:.2px;
-      cursor:pointer;
-      transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
-      display:inline-flex; align-items:center; gap:10px;
-      line-height:1;
-    }
-    .btn:hover{ transform: translateY(-1px); filter: brightness(1.02); }
-    .btn:active{ transform: translateY(0px); }
-    .btn.primary{
-      color:#07111a;
-      background: linear-gradient(135deg, rgba(34,211,238,1), rgba(124,58,237,1));
-      box-shadow: 0 18px 60px rgba(124,58,237,.22);
-    }
-    .btn.ghost{
-      color: rgba(255,255,255,.92);
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.14);
-    }
-
-    /* Main */
-    main{ padding-bottom: 92px; } /* for mobile bottom bar */
+    main{ padding-bottom: 98px; } /* for mobile bar */
     .page{
       display:none;
-      padding: 26px 0 70px;
+      padding: 22px 0 70px;
       animation: fadeIn .22s ease both;
     }
     .page.active{ display:block; }
@@ -187,16 +118,6 @@
       to{ opacity:1; transform: translateY(0px); }
     }
 
-    /* Hero */
-    .hero{
-      padding: 34px 0 18px;
-    }
-    .hero-grid{
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 18px;
-      align-items:stretch;
-    }
     .panel{
       border:1px solid rgba(255,255,255,.12);
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
@@ -205,13 +126,13 @@
       overflow:hidden;
       position:relative;
     }
+    .panel .inner{ padding: 22px; position:relative; z-index:1; }
     .panel:before{
       content:"";
       position:absolute; inset:-120px -120px auto auto;
       width: 260px; height:260px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, rgba(34,211,238,.20), transparent 65%);
-      filter: blur(0px);
+      background: radial-gradient(circle at 30% 30%, rgba(0,255,255,.18), transparent 65%);
       pointer-events:none;
     }
     .panel:after{
@@ -222,60 +143,15 @@
       background: radial-gradient(circle at 40% 40%, rgba(124,58,237,.20), transparent 65%);
       pointer-events:none;
     }
-    .hero-inner{
-      padding: 26px 22px;
-      position:relative;
-      z-index:1;
-    }
-    .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      color: rgba(255,255,255,.86);
-      font-weight: 850;
-      letter-spacing:.2px;
-      font-size: 13px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.14);
-    }
-    .kicker .badge{
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(52,211,153,.16);
-      border: 1px solid rgba(52,211,153,.25);
-      color: rgba(255,255,255,.92);
-      font-size:12px;
-      font-weight: 900;
-    }
-    h1{
-      margin: 14px 0 8px;
-      font-size: clamp(28px, 3.6vw, 44px);
-      line-height: 1.05;
-      letter-spacing: -0.5px;
-    }
-    .lead{
-      margin: 0;
-      color: var(--muted);
-      font-size: 15.5px;
-      line-height: 1.55;
-      max-width: 62ch;
-    }
-    .hero-actions{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top: 16px;
-      align-items:center;
-    }
-    .subnote{
-      margin-top: 12px;
-      display:flex; flex-wrap:wrap; gap:10px;
-      color: var(--muted2);
-      font-size: 13px;
-      line-height:1.4;
-    }
-    .subnote b{ color: rgba(255,255,255,.85); font-weight:900; }
 
-    .side{
-      padding: 18px;
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 16px;
+      align-items:stretch;
+      margin-top: 14px;
+    }
+    .aside{
       display:flex;
       flex-direction:column;
       gap: 12px;
@@ -286,31 +162,19 @@
       background: rgba(0,0,0,.14);
       padding: 14px;
     }
-    .mini .t{
-      font-weight: 900;
-      letter-spacing:.2px;
-      margin-bottom: 6px;
-    }
-    .mini .p{
-      color: var(--muted);
-      font-size: 13.5px;
-      line-height: 1.5;
-      margin: 0 0 10px;
-    }
-    .mini .meta{
-      display:flex; flex-wrap:wrap; gap:8px;
-      color: var(--muted2);
-      font-size: 12.5px;
-    }
+    .mini .t{ font-weight: 950; letter-spacing:.2px; margin-bottom: 6px; }
+    .mini .p{ margin: 0; color: var(--muted); font-size: 13.8px; line-height: 1.55; }
+    .meta{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
     .tag{
       padding: 7px 10px;
       border-radius: 999px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.04);
-      font-weight: 750;
+      font-weight: 800;
+      font-size: 12px;
+      color: rgba(255,255,255,.88);
     }
 
-    /* Sections */
     .section{ margin-top: 18px; }
     .section h2{
       margin: 0 0 8px;
@@ -324,171 +188,46 @@
       font-size: 14.5px;
     }
 
-    .grid3{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-    .grid2{
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-    .card{
+    .grid3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .grid2{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+    .simple-card{
       border: 1px solid rgba(255,255,255,.12);
       border-radius: var(--radius);
       background: rgba(255,255,255,.05);
       padding: 16px;
       box-shadow: 0 10px 40px rgba(0,0,0,.30);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
-    .card:hover{
-      transform: translateY(-2px);
-      border-color: rgba(255,255,255,.20);
-      background: rgba(255,255,255,.06);
-    }
-    .card .h{
-      display:flex; align-items:center; gap:10px;
+    .simple-card .h{
       font-weight: 950;
-      letter-spacing:.2px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
+      display:flex; align-items:center; gap:10px;
     }
-    .ic{
-      width: 36px; height: 36px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, rgba(124,58,237,.28), rgba(34,211,238,.18));
-      border: 1px solid rgba(255,255,255,.14);
-      display:grid; place-items:center;
-      flex: 0 0 auto;
-    }
-    .card .b{
+    .simple-card .b{
+      margin:0;
       color: var(--muted);
       line-height: 1.6;
       font-size: 14px;
-      margin:0;
     }
 
-    .steps{
-      counter-reset: step;
-    }
-    .step{
-      display:flex; gap:12px;
-      align-items:flex-start;
-      padding: 14px 14px;
-      border-radius: var(--radius);
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.14);
-    }
-    .step:before{
-      counter-increment: step;
-      content: counter(step);
-      width: 34px; height: 34px;
-      border-radius: 14px;
-      display:grid; place-items:center;
-      font-weight: 950;
-      background: rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.14);
-      flex:0 0 auto;
-    }
-    .step .t{ font-weight: 950; margin: 2px 0 4px; }
-    .step .p{ margin:0; color: var(--muted); line-height:1.55; font-size: 13.8px; }
-
-    /* Pricing table */
+    /* Table */
     .price{
       overflow:hidden;
       padding:0;
-    }
-    .price table{
-      width:100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    .price th, .price td{
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(255,255,255,.10);
-      text-align:left;
-      vertical-align:top;
-    }
-    .price th{
-      color: rgba(255,255,255,.86);
-      font-weight: 950;
-      background: rgba(255,255,255,.04);
-    }
-    .price td{
-      color: rgba(255,255,255,.86);
-    }
-    .muted{ color: var(--muted); }
-    .right{ text-align:right; }
-    .pill2{
-      display:inline-flex; align-items:center; gap:8px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.05);
-      font-weight: 900;
-      font-size: 12.5px;
-      color: rgba(255,255,255,.92);
-      white-space:nowrap;
-    }
-    .pill2 small{ font-weight: 800; color: var(--muted); }
-
-    /* FAQ */
-    .faq{
-      border:1px solid rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.12);
       border-radius: var(--radius2);
       background: rgba(0,0,0,.14);
-      overflow:hidden;
+      box-shadow: 0 10px 50px rgba(0,0,0,.35);
     }
-    details{
-      border-top:1px solid rgba(255,255,255,.10);
-      padding: 14px 16px;
-    }
-    details:first-child{ border-top:0; }
-    summary{
-      cursor:pointer;
-      list-style:none;
-      font-weight: 950;
-      letter-spacing:.1px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-    }
-    summary::-webkit-details-marker{ display:none; }
-    .caret{
-      width: 34px; height: 34px;
-      border-radius: 14px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      display:grid; place-items:center;
-      flex: 0 0 auto;
-      transition: transform .14s ease;
-    }
-    details[open] .caret{ transform: rotate(180deg); }
-    details p{
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-      max-width: 80ch;
-    }
+    .price table{ width:100%; border-collapse: collapse; font-size: 14px; }
+    .price th, .price td{ padding: 12px 14px; border-bottom: 1px solid rgba(255,255,255,.10); text-align:left; vertical-align:top; }
+    .price th{ color: rgba(255,255,255,.86); font-weight: 950; background: rgba(255,255,255,.04); }
+    .right{ text-align:right; }
+    .muted{ color: var(--muted); }
 
-    /* Contact block */
-    .contact-grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      align-items:start;
-    }
-    .field{
-      display:flex; flex-direction:column; gap:8px;
-      margin-bottom: 10px;
-    }
-    label{
-      font-size: 12.5px;
-      color: rgba(255,255,255,.82);
-      font-weight: 850;
-    }
+    /* Form */
+    .field{ display:flex; flex-direction:column; gap:8px; margin-bottom: 10px; }
+    label{ font-size: 12.5px; color: rgba(255,255,255,.82); font-weight: 900; }
     input, textarea{
       border-radius: 14px;
       border:1px solid rgba(255,255,255,.14);
@@ -499,32 +238,10 @@
       transition: border-color .12s ease, background .12s ease;
       font-size: 14px;
     }
-    textarea{ min-height: 108px; resize: vertical; }
-    input:focus, textarea:focus{
-      border-color: rgba(34,211,238,.45);
-      background: rgba(255,255,255,.04);
-    }
-    .hint{
-      color: var(--muted2);
-      font-size: 12.5px;
-      line-height: 1.45;
-      margin-top: 6px;
-    }
-    .map{
-      width:100%;
-      height: 360px;
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: var(--radius2);
-      overflow:hidden;
-      background: rgba(255,255,255,.04);
-    }
-    .map iframe{
-      width:100%; height:100%;
-      border:0;
-      filter: saturate(.95) contrast(1.05);
-    }
+    textarea{ min-height: 110px; resize: vertical; }
+    input:focus, textarea:focus{ border-color: rgba(0,255,255,.40); background: rgba(255,255,255,.04); }
+    .hint{ color: var(--muted2); font-size: 12.5px; line-height: 1.45; margin-top: 8px; }
 
-    /* Footer */
     footer{
       border-top: 1px solid rgba(255,255,255,.10);
       background: rgba(0,0,0,.16);
@@ -532,11 +249,9 @@
       color: var(--muted);
       font-size: 13px;
     }
-    .foot{
-      display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
-    }
+    .foot{ display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
 
-    /* Mobile bottom bar */
+    /* Mobile bottom actions */
     .bottombar{
       position:fixed;
       left:0; right:0; bottom:0;
@@ -568,82 +283,498 @@
       color: rgba(255,255,255,.92);
       border: 1px solid rgba(255,255,255,.12);
     }
-    .barbtn.primary{
-      background: linear-gradient(135deg, rgba(34,211,238,1), rgba(124,58,237,1));
-      color:#07111a;
-      border:0;
-    }
-    .icon{
-      width: 18px; height: 18px;
-      display:inline-block;
-    }
 
     /* Responsive */
     @media (max-width: 980px){
       .hero-grid{ grid-template-columns: 1fr; }
-      .top-cta{ min-width:auto; }
-      .brand{ min-width:auto; }
       .grid3{ grid-template-columns: 1fr; }
       .grid2{ grid-template-columns: 1fr; }
-      .contact-grid{ grid-template-columns: 1fr; }
       .bottombar{ display:block; }
-      main{ padding-bottom: 108px; }
-      .top-cta .pill{ display:none; }
+      main{ padding-bottom: 112px; }
     }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    }
+
+    /* =========================
+       (4) TYPING TEXT COMPONENT
+    ========================== */
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: var(--text-color); }
+    }
+    #typing-text{
+      color: var(--text-color);
+      border-right: 3.5px solid var(--text-color);
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: clamp(2.1rem, 6vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      display: inline-block;
+      min-height: calc(clamp(2.1rem, 6vw, 4.2rem) * 1.15);
+      animation: blink 0.7s steps(2) infinite;
+      letter-spacing: -0.6px;
+    }
+    .hero-sub{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+      max-width: 65ch;
+    }
+    .hero-actions{
+      display:flex; gap:14px; flex-wrap:wrap;
+      margin-top: 18px;
+      align-items:center;
+    }
+
+    /* =========================
+       (2) MORPH BUTTON COMPONENT
+       (scoped - unchanged classes)
+    ========================== */
+    .morph-btn {
+      position: relative;
+      padding: 18px 38px;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      overflow: visible;
+      isolation: isolate;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      line-height:1;
+      user-select:none;
+    }
+    .morph-btn .btn-fill {
+      position: absolute;
+      inset: 0;
+      background: #0d0d0d;
+      border-radius: 4px;
+      transition: border-radius 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1;
+      border: 1px solid rgba(0,255,255,.25);
+      box-shadow: 0 0 0 0 transparent;
+    }
+    .morph-btn:hover .btn-fill {
+      border-radius: 50px;
+      animation: jelly 0.5s ease;
+      box-shadow: 0 0 12px rgba(0,255,255,.35);
+    }
+    @keyframes jelly {
+      0% { transform: scale(1, 1); }
+      30% { transform: scale(1.15, 0.85); }
+      50% { transform: scale(0.9, 1.1); }
+      70% { transform: scale(1.05, 0.95); }
+      100% { transform: scale(1, 1); }
+    }
+    .morph-btn .orbit-dots { position: absolute; inset: -30px; pointer-events: none; }
+    .morph-btn .orbit-dots span {
+      position: absolute;
+      width: 8px; height: 8px;
+      background: #0d0d0d;
+      border-radius: 50%;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      border: 1px solid rgba(0,255,255,.25);
+    }
+    .morph-btn .orbit-dots span:nth-child(1){ top:0; left:50%; animation: orbit1 3s linear infinite; }
+    .morph-btn .orbit-dots span:nth-child(2){ bottom:0; left:50%; animation: orbit2 3s linear infinite; }
+    .morph-btn .orbit-dots span:nth-child(3){ top:50%; left:0; animation: orbit3 4s linear infinite; }
+    .morph-btn .orbit-dots span:nth-child(4){ top:50%; right:0; animation: orbit4 4s linear infinite; }
+
+    @keyframes orbit1 {
+      0% { transform: translateX(-50%) translateY(0) scale(1); }
+      25% { transform: translateX(30px) translateY(10px) scale(0.6); }
+      50% { transform: translateX(-50%) translateY(20px) scale(1); }
+      75% { transform: translateX(-80px) translateY(10px) scale(0.6); }
+      100% { transform: translateX(-50%) translateY(0) scale(1); }
+    }
+    @keyframes orbit2 {
+      0% { transform: translateX(-50%) translateY(0) scale(0.6); }
+      25% { transform: translateX(-80px) translateY(-10px) scale(1); }
+      50% { transform: translateX(-50%) translateY(-20px) scale(0.6); }
+      75% { transform: translateX(30px) translateY(-10px) scale(1); }
+      100% { transform: translateX(-50%) translateY(0) scale(0.6); }
+    }
+    @keyframes orbit3 {
+      0% { transform: translateY(-50%) translateX(0) scale(0.8); }
+      50% { transform: translateY(-50%) translateX(-15px) scale(1.2); }
+      100% { transform: translateY(-50%) translateX(0) scale(0.8); }
+    }
+    @keyframes orbit4 {
+      0% { transform: translateY(-50%) translateX(0) scale(1.2); }
+      50% { transform: translateY(-50%) translateX(15px) scale(0.8); }
+      100% { transform: translateY(-50%) translateX(0) scale(1.2); }
+    }
+
+    .morph-btn .btn-text{ position: relative; display: inline-block; z-index: 3; }
+    .morph-btn .btn-text span{
+      display:inline-block;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transition-delay: calc(var(--i) * 0.03s);
+    }
+    .morph-btn:hover .btn-text span{
+      transform: translateY(-100%);
+      animation: letterBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+      animation-delay: calc(var(--i) * 0.03s);
+    }
+    @keyframes letterBounce {
+      0% { transform: translateY(0); }
+      40% { transform: translateY(-120%); }
+      70% { transform: translateY(10%); }
+      100% { transform: translateY(0); }
+    }
+
+    .morph-btn .corners span{
+      position:absolute;
+      width: 18px; height: 18px;
+      border: 2px solid #0d0d0d;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      opacity: 1;
+      z-index:2;
+    }
+    .morph-btn .corners span:nth-child(1){ top:-10px; left:-10px; border-right:none; border-bottom:none; }
+    .morph-btn .corners span:nth-child(2){ top:-10px; right:-10px; border-left:none; border-bottom:none; }
+    .morph-btn .corners span:nth-child(3){ bottom:-10px; left:-10px; border-right:none; border-top:none; }
+    .morph-btn .corners span:nth-child(4){ bottom:-10px; right:-10px; border-left:none; border-top:none; }
+    .morph-btn:hover .corners span:nth-child(1){ transform: translate(-5px, -5px) rotate(-5deg); }
+    .morph-btn:hover .corners span:nth-child(2){ transform: translate(5px, -5px) rotate(5deg); }
+    .morph-btn:hover .corners span:nth-child(3){ transform: translate(-5px, 5px) rotate(5deg); }
+    .morph-btn:hover .corners span:nth-child(4){ transform: translate(5px, 5px) rotate(-5deg); }
+
+    .morph-btn .shadow{
+      position:absolute;
+      inset: 5px;
+      background: rgba(13, 13, 13, 0.3);
+      border-radius: 4px;
+      filter: blur(15px);
+      z-index:0;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      transform: translateY(10px);
+    }
+    .morph-btn:hover .shadow{
+      border-radius: 50px;
+      transform: translateY(15px) scale(1.1);
+      filter: blur(20px);
+    }
+    .morph-btn:active .btn-fill{ transform: scale(0.92); transition: transform 0.1s ease; }
+    .morph-btn:active .shadow{
+      transform: translateY(3px) scale(0.85);
+      filter: blur(8px);
+      opacity: 0.5;
+      transition: all 0.1s ease;
+    }
+    .morph-btn:active .btn-text{ transform: scale(0.95); transition: transform 0.1s ease; }
+    .morph-btn:active .orbit-dots span{ animation-play-state: paused; transform: scale(1.5); }
+
+    /* =========================
+       (1) NEON CARD COMPONENT
+       (unchanged classes)
+    ========================== */
+    .neon-card{
+      width: 100%;
+      max-width: 100%;
+      background: rgba(15, 15, 30, 0.7);
+      border: 2px solid var(--brandCyan);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,.5), 0 0 0 0 transparent;
+      transition: all .4s ease;
+      position: relative;
+    }
+    .neon-card:hover{
+      transform: translateY(-4px);
+      box-shadow:
+        0 0 10px var(--brandCyan),
+        0 0 20px var(--brandCyan),
+        0 0 30px rgba(0,255,255,0.25);
+    }
+    .neon-card img{
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .neon-card-content{
+      padding: 16px;
+      color: white;
+    }
+    .neon-card h3{
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0.3px;
+    }
+    .neon-card p{
+      margin:0;
+      font-size: 14px;
+      color: rgba(255,255,255,.8);
+      line-height: 1.45;
+    }
+    .neon-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background: linear-gradient(90deg, transparent, rgba(0,255,255,.18), transparent);
+      transition: left .9s ease;
+      pointer-events:none;
+      z-index:1;
+    }
+    .neon-card:hover::before{ left:100%; }
+
+    /* =========================
+       (3) SCROLLING STRIP COMPONENT
+       fixed: scope img selector, keep original class name "scorlling"
+    ========================== */
+    :root{
+      --total-items: 9;
+      --animation-duration: 28s;
+    }
+    .scorlling{
+      width: 100%;
+      max-width: 1536px;
+      position: relative;
+      height: 150px;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.14);
+
+      mask-image: linear-gradient(to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 18%,
+        rgba(0,0,0,1) 82%,
+        rgba(0,0,0,0)
+      );
+    }
+    .scorlling img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      filter: saturate(1.05) contrast(1.05);
+    }
+    @keyframes scrollleft { to { left: -260px; } }
+    .scorlling .item{
+      width: 250px;
+      height: 100%;
+      background-color: #bababa;
+      border-radius: 10px;
+      position: absolute;
+      overflow: hidden;
+      left: max(calc(250px * var(--total-items)), 100%);
+      animation-name: scrollleft;
+      animation-duration: var(--animation-duration);
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      border: 1px solid rgba(0,255,255,.15);
+    }
+    .item1{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 1) * -1); }
+    .item2{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 2) * -1); }
+    .item3{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 3) * -1); }
+    .item4{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 4) * -1); }
+    .item5{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 5) * -1); }
+    .item6{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 6) * -1); }
+    .item7{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 7) * -1); }
+    .item8{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 8) * -1); }
+    .item9{ animation-delay: calc(var(--animation-duration) / var(--total-items) * (var(--total-items) - 9) * -1); }
+
+    /* =========================
+       (5) SPLASH BUTTON COMPONENT
+       scoped by wrapper ".splashbtn"
+    ========================== */
+    .splashbtn .button{
+      --white: #ffe7ff;
+      --purple-100: #f4b1fd;
+      --purple-200: #d190ff;
+      --purple-300: #c389f2;
+      --purple-400: #8e26e2;
+      --purple-500: #5e2b83;
+      --radius: 18px;
+
+      border-radius: var(--radius);
+      outline: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-family: Arial;
+      background: transparent;
+      letter-spacing: -0.6px;
+      border: 0;
+      position: relative;
+      width: 220px;
+      height: 76px;
+      transform: rotate(353deg) skewX(4deg);
+    }
+    .splashbtn .bg{ position:absolute; inset:0; border-radius: inherit; filter: blur(1px); }
+    .splashbtn .bg::before,
+    .splashbtn .bg::after{
+      content:"";
+      position:absolute; inset:0;
+      border-radius: calc(var(--radius) * 1.1);
+      background: var(--purple-500);
+    }
+    .splashbtn .bg::before{
+      filter: blur(5px);
+      transition: all 0.3s ease;
+      box-shadow:
+        -7px 6px 0 0 rgb(115 75 155 / 40%),
+        -14px 12px 0 0 rgb(115 75 155 / 30%),
+        -21px 18px 4px 0 rgb(115 75 155 / 25%),
+        -28px 24px 8px 0 rgb(115 75 155 / 15%),
+        -35px 30px 12px 0 rgb(115 75 155 / 12%),
+        -42px 36px 16px 0 rgb(115 75 155 / 8%),
+        -56px 42px 20px 0 rgb(115 75 155 / 5%);
+    }
+    .splashbtn .wrap{
+      border-radius: inherit;
+      overflow: hidden;
+      height: 100%;
+      transform: translate(6px, -6px);
+      padding: 3px;
+      background: linear-gradient(to bottom, var(--purple-100) 0%, var(--purple-400) 100%);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .splashbtn .outline{
+      position: absolute;
+      overflow: hidden;
+      inset: 0;
+      opacity: 0;
+      outline: none;
+      border-radius: inherit;
+      transition: all 0.4s ease;
+    }
+    .splashbtn .outline::before{
+      content:"";
+      position:absolute;
+      inset: 2px;
+      width:120px;
+      height:300px;
+      margin:auto;
+      background: linear-gradient(to right, transparent 0%, white 50%, transparent 100%);
+      animation: spin 3s linear infinite;
+      animation-play-state: paused;
+    }
+    .splashbtn .content{
+      pointer-events:none;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:1;
+      position:relative;
+      height:100%;
+      gap: 12px;
+      border-radius: calc(var(--radius) * 0.85);
+      font-weight: 700;
+      transition: all 0.3s ease;
+      background: linear-gradient(to bottom, var(--purple-300) 0%, var(--purple-400) 100%);
+      box-shadow:
+        inset -2px 12px 11px -5px var(--purple-200),
+        inset 1px -3px 11px 0px rgb(0 0 0 / 35%);
+    }
+    .splashbtn .content::before{
+      content:"";
+      inset:0;
+      position:absolute;
+      z-index:10;
+      width:80%;
+      top:45%;
+      bottom:35%;
+      opacity:.7;
+      margin:auto;
+      background: linear-gradient(to bottom, transparent, var(--purple-400));
+      filter: brightness(1.3) blur(5px);
+    }
+    .splashbtn .char{ transition: all .3s ease; display:flex; align-items:center; justify-content:center; }
+    .splashbtn .char span{ display:block; color:transparent; position:relative; }
+    .splashbtn .char span::after{
+      content: attr(data-label);
+      position:absolute;
+      color: var(--white);
+      text-shadow: -1px 1px 2px var(--purple-500);
+      left:0;
+      opacity:1;
+    }
+    .splashbtn .icon{ z-index:10; }
+    .splashbtn .icon div,
+    .splashbtn .icon div::before,
+    .splashbtn .icon div::after{
+      height: 3px;
+      border-radius: 1px;
+      background-color: var(--white);
+    }
+    .splashbtn .icon div{
+      position: relative;
+      width: 24px;
+      box-shadow: -2px 2px 5px var(--purple-400);
+      transform: scale(0.9);
+      background: linear-gradient(to bottom, var(--white), var(--purple-100));
+    }
+    .splashbtn .icon div::before,
+    .splashbtn .icon div::after{
+      content:"";
+      position:absolute;
+      right:0;
+      width: 14px;
+      border-radius: 15px;
+      transform-origin: center right;
+    }
+    .splashbtn .icon div::before{ transform: rotate(44deg); top: 1px; }
+    .splashbtn .icon div::after{ transform: rotate(316deg); bottom: 1px; }
+
+    .splashbtn .path{
+      position:absolute;
+      z-index:12;
+      bottom:0; left:0; right:0;
+      stroke-dasharray: 150 480;
+      stroke-dashoffset: 150;
+      pointer-events:none;
+    }
+    .splashbtn .splash{
+      position:absolute;
+      top:0; left:0;
+      pointer-events:none;
+      stroke-dasharray: 60 60;
+      stroke-dashoffset: 60;
+      transform: translate(-17%, -31%);
+      stroke: var(--purple-300);
+    }
+
+    .splashbtn .button:hover .wrap{ transform: translate(8px, -8px); }
+    .splashbtn .button:hover .outline{ opacity:1; }
+    .splashbtn .button:hover .outline::before{ animation-play-state: running; }
+
+    .splashbtn .button:active .bg::before{
+      filter: blur(5px);
+      opacity: 0.7;
+      box-shadow:
+        -7px 6px 0 0 rgb(115 75 155 / 40%),
+        -14px 12px 0 0 rgb(115 75 155 / 25%),
+        -21px 18px 4px 0 rgb(115 75 155 / 15%);
+    }
+    .splashbtn .button:active .wrap{ transform: translate(3px, -3px); }
+    .splashbtn .button:active .splash{ animation: splash 0.8s cubic-bezier(0.3, 0, 0, 1) forwards 0.05s; }
+
+    .splashbtn .button:focus .path{ animation: path 1.6s ease forwards 0.2s; }
+
+    @keyframes spin { 0%{ transform: rotate(0deg);} 100%{ transform: rotate(360deg);} }
+    @keyframes path { from{ stroke: white; } to{ stroke-dashoffset: -480; stroke: #f9c6fe; } }
+    @keyframes splash { to{ stroke-dasharray: 2 60; stroke-dashoffset: -60; } }
   </style>
-
-  <!-- JSON-LD: LocalBusiness / TowingService -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TowingService",
-    "name": "Эвакуатор Астана 24/7",
-    "areaServed": "Астана, Казахстан",
-    "telephone": "+77074534518",
-    "url": "https://example.com",
-    "description": "Эвакуатор в Астане 24/7: срочная подача, межгород, аккуратная погрузка.",
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-      "opens": "00:00",
-      "closes": "23:59"
-    }]
-  }
-  </script>
-
-  <!-- JSON-LD: FAQ -->
-  <script type="application/ld+json" id="faqJson">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Сколько стоит эвакуатор в Астане?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Цена зависит от класса авто, района и времени суток. Старт обычно от 10 000 ₸. Точную цену скажем за 30 секунд по телефону или WhatsApp."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Как быстро приезжаете?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "По Астане обычно 15–30 минут (в зависимости от пробок и района)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Работаете 24/7 и по межгороду?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Да, круглосуточно. Делаем межгород и перевозки по трассам."
-        }
-      }
-    ]
-  }
-  </script>
 </head>
 
 <body>
@@ -655,7 +786,7 @@
           <span class="logo" aria-hidden="true"></span>
           <span>
             <div class="t1">Эвакуатор Астана 24/7</div>
-            <div class="t2">Срочная подача • Межгород • Аккуратно</div>
+            <div class="t2">Подача 15–30 мин • Межгород • Аккуратно</div>
           </span>
         </a>
 
@@ -663,20 +794,10 @@
           <a class="chip" href="#home" data-route>Главная</a>
           <a class="chip" href="#services" data-route>Услуги</a>
           <a class="chip" href="#prices" data-route>Цены</a>
-          <a class="chip" href="#faq" data-route>FAQ</a>
           <a class="chip" href="#contacts" data-route>Контакты</a>
         </nav>
 
-        <div class="top-cta">
-          <div class="pill" title="Работаем круглосуточно">
-            <span class="dot" aria-hidden="true"></span>
-            <span>На связи 24/7</span>
-          </div>
-          <a class="btn primary" href="tel:+77074534518" aria-label="Позвонить +7 707 453 45 18">
-            <span class="icon" aria-hidden="true">📞</span>
-            Позвонить
-          </a>
-        </div>
+        <a class="chip" href="tel:+77074534518" title="Позвонить">+7 707 453 45 18</a>
       </div>
     </div>
   </header>
@@ -685,138 +806,164 @@
     <!-- PAGE: HOME -->
     <section class="page active" id="page-home" data-page="home">
       <div class="container">
-        <div class="hero">
-          <div class="hero-grid">
-            <div class="panel">
-              <div class="hero-inner">
-                <div class="kicker">
-                  <span class="badge">ПОДАЧА 15–30 МИН</span>
-                  <span>Астана • круглосуточно • без “сюрпризов” по цене</span>
-                </div>
 
-                <h1>Эвакуатор в Астане — быстро, аккуратно, 24/7</h1>
-                <p class="lead">
-                  Заберём легковое авто, кроссовер, минивэн. Поможем при ДТП, поломке, проколе, разрядке АКБ.
-                  Можем перевезти по городу или на межгород.
-                </p>
+        <div class="hero-grid">
+          <div class="panel">
+            <div class="inner">
+              <!-- (4) typing-text used here -->
+              <span id="typing-text"></span>
 
-                <div class="hero-actions">
-                  <a class="btn primary" href="tel:+77074534518">
-                    <span aria-hidden="true">⚡</span>
-                    Вызвать сейчас
-                  </a>
-                  <a class="btn ghost" href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%8D%D0%B2%D0%B0%D0%BA%D1%83%D0%B0%D1%82%D0%BE%D1%80%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9C%D0%BE%D1%8F%20%D0%BB%D0%BE%D0%BA%D0%B0%D1%86%D0%B8%D1%8F%3A%20%5B%D1%80%D0%B0%D0%B9%D0%BE%D0%BD%2F%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D.%20%D0%90%D0%B2%D1%82%D0%BE%3A%20%5B%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%2F%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%5D.%20%D0%9A%D1%83%D0%B4%D0%B0%20%D0%B2%D0%B5%D0%B7%D1%82%D0%B8%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D." target="_blank" rel="noopener">
-                    <span aria-hidden="true">💬</span>
-                    WhatsApp
-                  </a>
-                  <button class="btn ghost" type="button" data-goto="contacts">
-                    <span aria-hidden="true">🧾</span>
-                    Узнать цену за 30 сек
-                  </button>
-                </div>
+              <p class="hero-sub">
+                Срочная подача по Астане. Поможем при ДТП/поломке/проколе. Цена фиксируется до выезда.
+                Телефон/WhatsApp: <b>+7 707 453 45 18</b>.
+              </p>
 
-                <div class="subnote">
-                  <span class="pill2"><span aria-hidden="true">✅</span> Оплата: <small>нал/перевод</small></span>
-                  <span class="pill2"><span aria-hidden="true">🛡️</span> Погрузка: <small>бережно</small></span>
-                  <span class="pill2"><span aria-hidden="true">🧭</span> Межгород: <small>по договорённости</small></span>
-                </div>
+              <div class="hero-actions">
+                <!-- (2) morph-btn used here -->
+                <a class="morph-btn" href="tel:+77074534518" role="button" aria-label="Позвонить">
+                  <span class="btn-fill"></span>
+                  <span class="shadow"></span>
+                  <span class="btn-text">
+                    <span style="--i:0">В</span><span style="--i:1">Ы</span><span style="--i:2">З</span><span style="--i:3">В</span><span style="--i:4">А</span><span style="--i:5">Т</span><span style="--i:6">Ь</span>
+                  </span>
+                  <span class="orbit-dots"><span></span><span></span><span></span><span></span></span>
+                  <span class="corners"><span></span><span></span><span></span><span></span></span>
+                </a>
+
+                <a class="morph-btn" href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%8D%D0%B2%D0%B0%D0%BA%D1%83%D0%B0%D1%82%D0%BE%D1%80%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9E%D1%82%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%90%D0%B2%D1%82%D0%BE%3A%20%5B%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%2F%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%5D%2C%20%D0%9D%D0%B0%20%D1%85%D0%BE%D0%B4%D1%83%3A%20%5B%D0%B4%D0%B0%2F%D0%BD%D0%B5%D1%82%5D." target="_blank" rel="noopener" role="button">
+                  <span class="btn-fill"></span>
+                  <span class="shadow"></span>
+                  <span class="btn-text">
+                    <span style="--i:0">W</span><span style="--i:1">H</span><span style="--i:2">A</span><span style="--i:3">T</span><span style="--i:4">S</span><span style="--i:5">A</span><span style="--i:6">P</span><span style="--i:7">P</span>
+                  </span>
+                  <span class="orbit-dots"><span></span><span></span><span></span><span></span></span>
+                  <span class="corners"><span></span><span></span><span></span><span></span></span>
+                </a>
+
+                <a class="chip" href="#prices" data-route>Смотреть цены</a>
+              </div>
+
+              <div class="meta">
+                <span class="tag">24/7</span>
+                <span class="tag">15–30 мин</span>
+                <span class="tag">Астана + межгород</span>
+                <span class="tag">Оплата: нал/перевод</span>
+              </div>
+            </div>
+          </div>
+
+          <aside class="aside">
+            <div class="mini">
+              <div class="t">Как быстро назвать цену</div>
+              <p class="p">Скажи 4 вещи: <b>адрес</b> → <b>куда везти</b> → <b>марка авто</b> → <b>на ходу/нет</b>.</p>
+              <div class="meta">
+                <span class="tag">без скрытых доплат</span>
+                <span class="tag">фикс до выезда</span>
               </div>
             </div>
 
-            <aside class="side">
-              <div class="mini">
-                <div class="t">Телефон</div>
-                <p class="p">
-                  <a href="tel:+77074534518" style="font-weight:950;">+7 707 453 45 18</a><br>
-                  <span class="muted">Астана и трассы</span>
-                </p>
-                <div class="meta">
-                  <span class="tag">24/7</span>
-                  <span class="tag">15–30 мин</span>
-                  <span class="tag">Честная цена</span>
-                </div>
+            <div class="mini">
+              <div class="t">Когда вызывают эвакуатор</div>
+              <p class="p">ДТП • поломка • прокол • сел АКБ • заблокировано колесо • выезд из паркинга/двора.</p>
+              <div class="meta">
+                <span class="tag">аккуратная погрузка</span>
+                <span class="tag">бережная фиксация</span>
               </div>
+            </div>
 
-              <div class="mini">
-                <div class="t">Что нужно сказать диспетчеру</div>
-                <p class="p">Локация → марка авто → куда везти → состояние (на ходу/нет) → вес/тип.</p>
-                <button class="btn primary" type="button" data-goto="contacts" style="width:100%; justify-content:center;">
-                  <span aria-hidden="true">📝</span>
-                  Оставить заявку
+            <!-- (5) splash button used here -->
+            <div class="mini splashbtn">
+              <div class="t">Быстрый вызов</div>
+              <p class="p">Нажми, чтобы сразу позвонить.</p>
+
+              <a href="tel:+77074534518" style="display:inline-block;">
+                <button class="button" type="button" aria-label="Позвонить эвакуатор">
+                  <div class="bg"></div>
+
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 342 208" height="208" width="342" class="splash" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-width="3" d="M54.1054 99.7837C54.1054 99.7837 40.0984 90.7874 26.6893 97.6362C13.2802 104.485 1.5 97.6362 1.5 97.6362"></path>
+                    <path stroke-linecap="round" stroke-width="3" d="M285.273 99.7841C285.273 99.7841 299.28 90.7879 312.689 97.6367C326.098 104.486 340.105 95.4893 340.105 95.4893"></path>
+                  </svg>
+
+                  <div class="wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 221 42" height="42" width="221" class="path" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-width="3" d="M182.674 2H203C211.837 2 219 9.16344 219 18V24C219 32.8366 211.837 40 203 40H18C9.16345 40 2 32.8366 2 24V18C2 9.16344 9.16344 2 18 2H47.8855"></path>
+                    </svg>
+
+                    <div class="outline"></div>
+                    <div class="content">
+                      <span class="char">
+                        <span data-label="П">П</span>
+                        <span data-label="О">О</span>
+                        <span data-label="З">З</span>
+                        <span data-label="В">В</span>
+                        <span data-label="О">О</span>
+                        <span data-label="Н">Н</span>
+                        <span data-label="И">И</span>
+                        <span data-label="Т">Т</span>
+                        <span data-label="Ь">Ь</span>
+                      </span>
+                      <div class="icon" aria-hidden="true"><div></div></div>
+                    </div>
+                  </div>
                 </button>
-              </div>
+              </a>
 
-              <div class="mini">
-                <div class="t">Районы подачи</div>
-                <p class="p">Левый берег, правый берег, Сарыарка, Есиль, Алматы, Байконур и ближайшие посёлки.</p>
-                <div class="meta">
-                  <span class="tag">город</span>
-                  <span class="tag">окраины</span>
-                  <span class="tag">межгород</span>
-                </div>
-              </div>
-            </aside>
-          </div>
+              <div class="hint">Можно нажать TAB (фокус) — обводка анимируется.</div>
+            </div>
+          </aside>
         </div>
 
         <div class="section">
-          <h2>Популярные услуги</h2>
-          <p class="desc">Выберите сценарий — подскажем оптимальный вариант эвакуации и цену без лишних вопросов.</p>
+          <h2>Услуги</h2>
+          <p class="desc">Карточки ниже — это твой компонент <b>neon-card</b>, только текст заменён под эвакуатор.</p>
+
           <div class="grid3">
-            <div class="card">
-              <div class="h">
-                <span class="ic" aria-hidden="true">🚗</span>
-                Эвакуация легковых
+            <!-- (1) neon-card used -->
+            <div class="neon-card">
+              <img src="images/tow-hero.jpg" alt="Эвакуатор в Астане" />
+              <div class="neon-card-content">
+                <h3>Эвакуация по городу</h3>
+                <p>ДТП / поломка / не заводится. Доставка на СТО, домой, на стоянку. Бережная фиксация.</p>
               </div>
-              <p class="b">ДТП/поломка/не заводится. Бережная погрузка, фиксация ремнями, доставка на СТО/домой.</p>
             </div>
-            <div class="card">
-              <div class="h">
-                <span class="ic" aria-hidden="true">🛞</span>
-                Помощь на дороге
+
+            <div class="neon-card">
+              <img src="images/tow-road.jpg" alt="Эвакуатор на трассе" />
+              <div class="neon-card-content">
+                <h3>Межгород</h3>
+                <p>Перевозка по трассам и в соседние города. Маршрут и цена согласуются заранее.</p>
               </div>
-              <p class="b">Прокол, сел аккумулятор, буксировка, сложный выезд с двора/паркинга — решим быстро.</p>
             </div>
-            <div class="card">
-              <div class="h">
-                <span class="ic" aria-hidden="true">🛣️</span>
-                Межгород
+
+            <div class="neon-card">
+              <img src="images/tow-help.jpg" alt="Помощь на дороге" />
+              <div class="neon-card-content">
+                <h3>Помощь на дороге</h3>
+                <p>Прокол, сел АКБ, сложный выезд из двора/паркинга, блокировка колеса — решим.</p>
               </div>
-              <p class="b">Перевезём авто по трассе. Маршрут и стоимость фиксируем заранее.</p>
             </div>
           </div>
         </div>
 
         <div class="section">
-          <h2>Как это работает</h2>
-          <p class="desc">Простой процесс: без “ожиданий по 2 часа” и без доплат “по факту”.</p>
-          <div class="grid2 steps">
-            <div class="step">
-              <div>
-                <div class="t">Заявка</div>
-                <p class="p">Звонок или WhatsApp. Уточняем район, авто, пункт назначения.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div>
-                <div class="t">Подтверждение цены</div>
-                <p class="p">Сразу озвучиваем стоимость. Никаких скрытых “+2 000 за ремни”.</p>
-              </div>
-            </div>
-            <div class="step">
-              <div>
-                <div class="t">Подача эвакуатора</div>
-                <p class="p">Обычно 15–30 минут по Астане (по пробкам/району).</p>
-              </div>
-            </div>
-            <div class="step">
-              <div>
-                <div class="t">Погрузка и доставка</div>
-                <p class="p">Аккуратно грузим, фиксируем, доставляем. Поможем с разгрузкой на месте.</p>
-              </div>
-            </div>
+          <h2>Фото работ / техника</h2>
+          <p class="desc">Это твой компонент <b>scorlling</b> (бегущая лента). Картинки — локальные файлы.</p>
+
+          <!-- (3) scrolling strip used -->
+          <div class="scorlling" aria-label="Бегущая лента фотографий">
+            <div class="item item1"><img src="images/tow-1.jpg" alt="Эвакуатор 1" /></div>
+            <div class="item item2"><img src="images/tow-2.jpg" alt="Эвакуатор 2" /></div>
+            <div class="item item3"><img src="images/tow-3.jpg" alt="Эвакуатор 3" /></div>
+            <div class="item item4"><img src="images/tow-4.jpg" alt="Эвакуатор 4" /></div>
+            <div class="item item5"><img src="images/tow-5.jpg" alt="Эвакуатор 5" /></div>
+            <div class="item item6"><img src="images/tow-6.jpg" alt="Эвакуатор 6" /></div>
+            <div class="item item7"><img src="images/tow-7.jpg" alt="Эвакуатор 7" /></div>
+            <div class="item item8"><img src="images/tow-8.jpg" alt="Эвакуатор 8" /></div>
+            <div class="item item9"><img src="images/tow-9.jpg" alt="Эвакуатор 9" /></div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -825,79 +972,47 @@
       <div class="container">
         <div class="section">
           <h2>Услуги эвакуатора в Астане</h2>
-          <p class="desc">
-            Подбираем формат перевозки под ситуацию: город, окраины, межгород. Работаем 24/7, аккуратная погрузка.
-          </p>
+          <p class="desc">Расписал по пунктам — чтобы можно было использовать и для SEO.</p>
 
-          <div class="grid3">
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🏙️</span> По городу</div>
-              <p class="b">СТО, шиномонтаж, дилер, двор/паркинг. Быстро и без лишних ожиданий.</p>
+          <div class="grid2">
+            <div class="simple-card">
+              <div class="h">🏙️ Эвакуатор по городу</div>
+              <p class="b">Подача в районы: левый/правый берег, Сарыарка, Есиль, Алматы, Байконур. Доставка на СТО, домой, на стоянку.</p>
             </div>
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🧰</span> ДТП / Поломка</div>
-              <p class="b">Невозможность движения, повреждения подвески, колеса, рулевого — эвакуация безопасным способом.</p>
+            <div class="simple-card">
+              <div class="h">🛣️ Межгород</div>
+              <p class="b">Перевозка по трассе. Фиксируем маршрут и стоимость заранее, без «пересчёта по факту».</p>
             </div>
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🛣️</span> Межгород</div>
-              <p class="b">Трасса, область, соседние города. Цена фиксируется заранее.</p>
+            <div class="simple-card">
+              <div class="h">🧰 ДТП / поломка</div>
+              <p class="b">Если авто не на ходу или есть повреждения — организуем безопасную погрузку и фиксацию.</p>
             </div>
-
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🅿️</span> Сложные точки</div>
-              <p class="b">Низкий клиренс, двор с уклоном, тесный паркинг — подберём решение.</p>
-            </div>
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🔋</span> Сел аккумулятор</div>
-              <p class="b">Если нужно — поможем с запуском/подвозом на сервис (зависит от ситуации).</p>
-            </div>
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🛞</span> Прокол / Колесо</div>
-              <p class="b">Эвакуируем до шиномонтажа или в нужную точку. Минимум времени и нервов.</p>
+            <div class="simple-card">
+              <div class="h">🅿️ Сложные точки</div>
+              <p class="b">Тесный двор, уклон, паркинг, низкая посадка — подберём решение по месту.</p>
             </div>
           </div>
         </div>
 
         <div class="section">
-          <h2>Что влияет на стоимость</h2>
-          <p class="desc">Чтобы назвать точную цену, нам нужно 4 пункта — отвечаете за 10 секунд.</p>
-          <div class="grid2">
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">📍</span> Где вы сейчас</div>
-              <p class="b">Район/адрес + ориентир (ТЦ, ЖК, улица). Это влияет на подачу и маршрут.</p>
-            </div>
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🎯</span> Куда везти</div>
-              <p class="b">СТО/дом/город/межгород. Укажи адрес — зафиксируем цену.</p>
-            </div>
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🚙</span> Тип авто</div>
-              <p class="b">Легковое/кроссовер/минивэн. Если низкая посадка — скажи, подберём подкат/угол.</p>
-            </div>
-            <div class="card">
-              <div class="h"><span class="ic" aria-hidden="true">🧯</span> Состояние</div>
-              <p class="b">На ходу/не на ходу, заблокировано колесо, после ДТП — влияет на время погрузки.</p>
-            </div>
-          </div>
+          <h2>Нужен расчёт цены?</h2>
+          <p class="desc">Жми WhatsApp — откроется готовое сообщение. (CTA — это твой morph-btn.)</p>
 
-          <div class="section" style="margin-top:16px;">
-            <div class="panel">
-              <div class="hero-inner">
-                <div class="kicker">
-                  <span class="badge">ЦЕНА ЗА 30 СЕК</span>
-                  <span>Напиши в WhatsApp — сразу ответим</span>
-                </div>
-                <div class="hero-actions">
-                  <a class="btn primary" href="tel:+77074534518"><span aria-hidden="true">📞</span> Позвонить</a>
-                  <a class="btn ghost" href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A1%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83%20%D1%8D%D0%B2%D0%B0%D0%BA%D1%83%D0%B0%D1%82%D0%BE%D1%80%D0%B0%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9E%D1%82%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%B0%D0%B2%D1%82%D0%BE%3A%20%5B%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%2F%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%5D%2C%20%D1%81%D0%BE%D1%81%D1%82%D0%BE%D1%8F%D0%BD%D0%B8%D0%B5%3A%20%5B%D0%BD%D0%B0%20%D1%85%D0%BE%D0%B4%D1%83%2F%D0%BD%D0%B5%D1%82%5D." target="_blank" rel="noopener">
-                    <span aria-hidden="true">💬</span> WhatsApp
-                  </a>
-                  <button class="btn ghost" type="button" data-goto="prices"><span aria-hidden="true">💰</span> Смотреть цены</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="hero-actions">
+            <a class="morph-btn" href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A1%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D1%86%D0%B5%D0%BD%D1%83%20%D1%8D%D0%B2%D0%B0%D0%BA%D1%83%D0%B0%D1%82%D0%BE%D1%80%D0%B0%20%D0%B2%20%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B5.%20%D0%9E%D1%82%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%B0%D0%B2%D1%82%D0%BE%3A%20%5B%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%2F%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%5D%2C%20%D0%BD%D0%B0%20%D1%85%D0%BE%D0%B4%D1%83%3A%20%5B%D0%B4%D0%B0%2F%D0%BD%D0%B5%D1%82%5D." target="_blank" rel="noopener" role="button">
+              <span class="btn-fill"></span>
+              <span class="shadow"></span>
+              <span class="btn-text">
+                <span style="--i:0">Ц</span><span style="--i:1">Е</span><span style="--i:2">Н</span><span style="--i:3">А</span>
+                <span style="--i:4"> </span>
+                <span style="--i:5">W</span><span style="--i:6">A</span>
+              </span>
+              <span class="orbit-dots"><span></span><span></span><span></span><span></span></span>
+              <span class="corners"><span></span><span></span><span></span><span></span></span>
+            </a>
 
+            <a class="chip" href="tel:+77074534518">Позвонить</a>
+          </div>
         </div>
       </div>
     </section>
@@ -906,12 +1021,10 @@
     <section class="page" id="page-prices" data-page="prices">
       <div class="container">
         <div class="section">
-          <h2>Цены</h2>
-          <p class="desc">
-            Ниже — ориентиры. Точная стоимость зависит от района, времени и типа авто. Скажем цену за 30 секунд по телефону/WhatsApp.
-          </p>
+          <h2>Цены (ориентир)</h2>
+          <p class="desc">Точную цену скажем за 30 секунд по телефону/WhatsApp — зависит от района, времени и типа авто.</p>
 
-          <div class="card price">
+          <div class="price">
             <table aria-label="Прайс эвакуатора">
               <thead>
                 <tr>
@@ -921,146 +1034,42 @@
               </thead>
               <tbody>
                 <tr>
-                  <td><b>Эвакуатор по Астане (легковое)</b><br><span class="muted">подача + перевозка в пределах города</span></td>
+                  <td><b>Эвакуатор по Астане (легковое)</b><br><span class="muted">подача + перевозка по городу</span></td>
                   <td class="right"><b>от 10 000 ₸</b></td>
                 </tr>
                 <tr>
-                  <td><b>Кроссовер / минивэн</b><br><span class="muted">если авто тяжелее/габаритнее</span></td>
+                  <td><b>Кроссовер / минивэн</b><br><span class="muted">габарит/вес выше</span></td>
                   <td class="right"><b>от 12 000 ₸</b></td>
                 </tr>
                 <tr>
-                  <td><b>Низкая посадка / сложная погрузка</b><br><span class="muted">паркинг, двор, уклон, блокировка колеса</span></td>
+                  <td><b>Сложная погрузка</b><br><span class="muted">низкая посадка, паркинг, блокировка колеса</span></td>
                   <td class="right"><b>по ситуации</b></td>
                 </tr>
                 <tr>
-                  <td><b>Межгород</b><br><span class="muted">фиксируем цену заранее по маршруту</span></td>
+                  <td><b>Межгород</b><br><span class="muted">стоимость по маршруту</span></td>
                   <td class="right"><b>договорная</b></td>
-                </tr>
-                <tr>
-                  <td><b>Срочный выезд</b><br><span class="muted">приоритетная подача (если свободно)</span></td>
-                  <td class="right"><b>по ситуации</b></td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div class="section">
-            <h2>Почему цена может отличаться</h2>
-            <p class="desc">Чтобы не было сюрпризов — заранее проговариваем всё, что влияет на стоимость.</p>
-            <div class="grid3">
-              <div class="card">
-                <div class="h"><span class="ic" aria-hidden="true">⏱️</span> Время суток</div>
-                <p class="b">Ночной выезд и пик пробок могут влиять на подачу/маршрут.</p>
-              </div>
-              <div class="card">
-                <div class="h"><span class="ic" aria-hidden="true">📦</span> Сложность</div>
-                <p class="b">Низкая посадка, блокировка колеса, тесный паркинг, снежная каша.</p>
-              </div>
-              <div class="card">
-                <div class="h"><span class="ic" aria-hidden="true">📏</span> Дистанция</div>
-                <p class="b">Город/окраины/межгород. Фиксируем цену до выезда.</p>
-              </div>
+            <h2>Быстрый расчёт</h2>
+            <p class="desc">Кнопка — morph-btn (из твоего шаблона).</p>
+            <div class="hero-actions">
+              <a class="morph-btn" href="tel:+77074534518" role="button">
+                <span class="btn-fill"></span>
+                <span class="shadow"></span>
+                <span class="btn-text">
+                  <span style="--i:0">З</span><span style="--i:1">В</span><span style="--i:2">О</span><span style="--i:3">Н</span><span style="--i:4">О</span><span style="--i:5">К</span>
+                </span>
+                <span class="orbit-dots"><span></span><span></span><span></span><span></span></span>
+                <span class="corners"><span></span><span></span><span></span><span></span></span>
+              </a>
+
+              <a class="chip" href="#contacts" data-route>Оставить заявку</a>
             </div>
           </div>
-
-          <div class="section">
-            <div class="panel">
-              <div class="hero-inner">
-                <h2 style="margin:0 0 8px;">Нужно быстро?</h2>
-                <p class="lead" style="margin:0 0 14px;">
-                  Напиши в WhatsApp: адрес, куда везти, марку авто — ответим сразу.
-                </p>
-                <div class="hero-actions">
-                  <a class="btn primary" href="tel:+77074534518"><span aria-hidden="true">📞</span> Позвонить</a>
-                  <a class="btn ghost" href="https://wa.me/77074534518?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9D%D1%83%D0%B6%D0%B5%D0%BD%20%D1%8D%D0%B2%D0%B0%D0%BA%D1%83%D0%B0%D1%82%D0%BE%D1%80.%20%D0%9E%D1%82%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%BA%D1%83%D0%B4%D0%B0%3A%20%5B%D0%B0%D0%B4%D1%80%D0%B5%D1%81%5D%2C%20%D0%90%D0%B2%D1%82%D0%BE%3A%20%5B%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%2F%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C%5D%2C%20%D0%9D%D0%B0%20%D1%85%D0%BE%D0%B4%D1%83%3A%20%5B%D0%B4%D0%B0%2F%D0%BD%D0%B5%D1%82%5D." target="_blank" rel="noopener">
-                    <span aria-hidden="true">💬</span> WhatsApp
-                  </a>
-                  <button class="btn ghost" type="button" data-goto="contacts"><span aria-hidden="true">🧾</span> Оставить заявку</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- PAGE: FAQ -->
-    <section class="page" id="page-faq" data-page="faq">
-      <div class="container">
-        <div class="section">
-          <h2>FAQ</h2>
-          <p class="desc">Ответы на частые вопросы. Если вопрос нестандартный — напиши в WhatsApp, ответим быстро.</p>
-
-          <div class="faq">
-            <details open>
-              <summary>
-                Сколько стоит эвакуатор в Астане?
-                <span class="caret" aria-hidden="true">⌄</span>
-              </summary>
-              <p>Цена зависит от класса авто, района и времени. Старт обычно от <b>10 000 ₸</b>. Точную цену назовём за 30 секунд по телефону/WhatsApp.</p>
-            </details>
-
-            <details>
-              <summary>
-                Как быстро вы приезжаете?
-                <span class="caret" aria-hidden="true">⌄</span>
-              </summary>
-              <p>По Астане чаще всего <b>15–30 минут</b>. В часы пик/снегопад может быть дольше — сразу скажем реальное время.</p>
-            </details>
-
-            <details>
-              <summary>
-                Работаете 24/7 и ночью?
-                <span class="caret" aria-hidden="true">⌄</span>
-              </summary>
-              <p>Да, работаем круглосуточно. Можем приехать ночью и в выходные.</p>
-            </details>
-
-            <details>
-              <summary>
-                Можно межгород?
-                <span class="caret" aria-hidden="true">⌄</span>
-              </summary>
-              <p>Да. Уточни маршрут — мы фиксируем цену заранее и согласуем детали.</p>
-            </details>
-
-            <details>
-              <summary>
-                Как подготовить авто к эвакуации?
-                <span class="caret" aria-hidden="true">⌄</span>
-              </summary>
-              <p>Достаточно сообщить, где ключи, и убрать ценные вещи из салона. Если авто заблокировано/после ДТП — предупреди заранее.</p>
-            </details>
-
-            <details>
-              <summary>
-                Оплата наличными или переводом?
-                <span class="caret" aria-hidden="true">⌄</span>
-              </summary>
-              <p>Возможны оба варианта: наличные или перевод. Уточни удобный способ при заявке.</p>
-            </details>
-          </div>
-
-          <div class="section" style="margin-top:16px;">
-            <div class="grid2">
-              <div class="card">
-                <div class="h"><span class="ic" aria-hidden="true">📞</span> Быстрее всего — звонок</div>
-                <p class="b">Если срочно, позвони: уточним детали и выедем сразу.</p>
-                <div style="margin-top:10px;">
-                  <a class="btn primary" href="tel:+77074534518"><span aria-hidden="true">⚡</span> +7 707 453 45 18</a>
-                </div>
-              </div>
-              <div class="card">
-                <div class="h"><span class="ic" aria-hidden="true">💬</span> Удобно — WhatsApp</div>
-                <p class="b">Отправь адрес + марку авто + куда везти — ответим ценой в одном сообщении.</p>
-                <div style="margin-top:10px;">
-                  <a class="btn ghost" href="https://wa.me/77074534518" target="_blank" rel="noopener"><span aria-hidden="true">🟢</span> Написать в WhatsApp</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -1070,16 +1079,11 @@
       <div class="container">
         <div class="section">
           <h2>Контакты</h2>
-          <p class="desc">
-            Астана. Работаем 24/7. Самый быстрый способ — звонок или WhatsApp.
-          </p>
+          <p class="desc">Астана • 24/7 • Телефон/WhatsApp: <b>+7 707 453 45 18</b></p>
 
-          <div class="contact-grid">
-            <div class="card">
-              <div class="h">
-                <span class="ic" aria-hidden="true">📍</span>
-                Оставить заявку (без сайта/CRM)
-              </div>
+          <div class="grid2">
+            <div class="simple-card">
+              <div class="h">📝 Заявка (отправка в WhatsApp)</div>
 
               <form id="leadForm">
                 <div class="field">
@@ -1112,47 +1116,32 @@
                   <textarea id="msg" name="msg" placeholder="Например: после ДТП, колесо заблокировано, низкая посадка"></textarea>
                 </div>
 
-                <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                  <button class="btn primary" type="submit">
-                    <span aria-hidden="true">💬</span>
-                    Отправить в WhatsApp
+                <div class="hero-actions">
+                  <button class="morph-btn" type="submit">
+                    <span class="btn-fill"></span>
+                    <span class="shadow"></span>
+                    <span class="btn-text">
+                      <span style="--i:0">О</span><span style="--i:1">Т</span><span style="--i:2">П</span><span style="--i:3">Р</span><span style="--i:4">А</span><span style="--i:5">В</span><span style="--i:6">И</span><span style="--i:7">Т</span><span style="--i:8">Ь</span>
+                    </span>
+                    <span class="orbit-dots"><span></span><span></span><span></span><span></span></span>
+                    <span class="corners"><span></span><span></span><span></span><span></span></span>
                   </button>
-                  <a class="btn ghost" href="tel:+77074534518">
-                    <span aria-hidden="true">📞</span>
-                    Позвонить
-                  </a>
+
+                  <a class="chip" href="tel:+77074534518">Позвонить</a>
                 </div>
 
-                <div class="hint">
-                  Нажимая “Отправить”, откроется WhatsApp с готовым текстом заявки.
-                </div>
+                <div class="hint">Нажмёшь “Отправить” — откроется WhatsApp с готовым текстом заявки.</div>
               </form>
             </div>
 
-            <div>
-              <div class="card" style="margin-bottom:12px;">
-                <div class="h"><span class="ic" aria-hidden="true">☎️</span> Телефон</div>
-                <p class="b" style="font-size:16px;">
-                  <a href="tel:+77074534518" style="font-weight:950;">+7 707 453 45 18</a><br>
-                  <span class="muted">Астана • 24/7</span>
-                </p>
-                <div class="hero-actions" style="margin-top:10px;">
-                  <a class="btn primary" href="tel:+77074534518"><span aria-hidden="true">⚡</span> Вызвать</a>
-                  <a class="btn ghost" href="https://wa.me/77074534518" target="_blank" rel="noopener"><span aria-hidden="true">🟢</span> WhatsApp</a>
-                </div>
-              </div>
-
-              <div class="map" aria-label="Карта Астана">
-                <iframe
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps?q=%D0%90%D1%81%D1%82%D0%B0%D0%BD%D0%B0%20%D0%9A%D0%B0%D0%B7%D0%B0%D1%85%D1%81%D1%82%D0%B0%D0%BD&output=embed">
-                </iframe>
-              </div>
-
-              <div class="hint" style="margin-top:10px;">
-                Если хочешь — я добавлю точку/район на карте (под твой офис/базу) и SEO-ключи под “Эвакуатор Астана”.
-              </div>
+            <div class="simple-card">
+              <div class="h">📍 Мы на связи</div>
+              <p class="b" style="font-size:15px;">
+                Телефон: <b><a href="tel:+77074534518">+7 707 453 45 18</a></b><br />
+                WhatsApp: <b><a href="https://wa.me/77074534518" target="_blank" rel="noopener">написать</a></b><br />
+                Город: <b>Астана</b><br /><br />
+                <span class="muted">Если хочешь — добавлю точное место на карту (Google Maps embed) и расширю SEO-тексты под “Эвакуатор Астана”.</span>
+              </p>
             </div>
           </div>
         </div>
@@ -1173,18 +1162,12 @@
     </div>
   </footer>
 
-  <!-- Mobile bottom actions -->
+  <!-- Mobile bottom bar -->
   <div class="bottombar" role="navigation" aria-label="Быстрые действия">
     <div class="bargrid">
-      <a class="barbtn" href="tel:+77074534518" aria-label="Позвонить">
-        📞 Позвонить
-      </a>
-      <a class="barbtn" href="https://wa.me/77074534518" target="_blank" rel="noopener" aria-label="Написать WhatsApp">
-        💬 WhatsApp
-      </a>
-      <button class="barbtn primary" type="button" data-goto="contacts" aria-label="Узнать цену">
-        🧾 Узнать цену
-      </button>
+      <a class="barbtn" href="tel:+77074534518">📞 Позвонить</a>
+      <a class="barbtn" href="https://wa.me/77074534518" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="barbtn" href="#prices" data-route>💰 Цены</a>
     </div>
   </div>
 
@@ -1193,43 +1176,86 @@
       const PHONE = "+77074534518";
       const WA = "https://wa.me/77074534518";
 
+      // Router
       const pages = Array.from(document.querySelectorAll("[data-page]"));
-      const chips = Array.from(document.querySelectorAll(".chip[data-route]"));
+      const chips = Array.from(document.querySelectorAll(".chip[data-route], .barbtn[data-route]"));
 
       const titles = {
-        home: "Эвакуатор Астана 24/7 — срочная подача за 15–30 минут",
+        home: "Эвакуатор Астана 24/7 — +7 707 453 45 18",
         services: "Услуги эвакуатора в Астане — 24/7",
-        prices: "Цены на эвакуатор в Астане — ориентиры и расчёт",
-        faq: "FAQ — эвакуатор Астана",
+        prices: "Цены на эвакуатор в Астане — ориентир",
         contacts: "Контакты — эвакуатор Астана 24/7"
       };
 
-      function setMeta(page){
-        document.title = titles[page] || titles.home;
-      }
+      function setMeta(page){ document.title = titles[page] || titles.home; }
 
       function show(page){
         pages.forEach(p => p.classList.toggle("active", p.dataset.page === page));
-        chips.forEach(c => c.classList.toggle("active", (c.getAttribute("href") || "").replace("#","") === page));
+        // highlight chips by href hash
+        const target = "#" + page;
+        document.querySelectorAll(".chip[data-route]").forEach(c => {
+          const h = c.getAttribute("href");
+          c.classList.toggle("active", h === target);
+        });
         setMeta(page);
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       function route(){
         const hash = (location.hash || "#home").replace("#","");
-        const page = ["home","services","prices","faq","contacts"].includes(hash) ? hash : "home";
+        const page = ["home","services","prices","contacts"].includes(hash) ? hash : "home";
         show(page);
       }
 
-      document.addEventListener("click", (e) => {
-        const goto = e.target.closest("[data-goto]");
-        if(goto){
-          const page = goto.getAttribute("data-goto");
-          location.hash = "#" + page;
-        }
-      });
+      window.addEventListener("hashchange", route);
+      route();
 
-      // Lead form -> WhatsApp prefill (no backend needed)
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // (4) typing: adapted to multiple texts
+      const texts = [
+        "Эвакуатор Астана",
+        "Подача 15–30 минут",
+        "24/7 • Межгород"
+      ];
+      let tIndex = 0;
+      let cIndex = 0;
+      let isDeleting = false;
+      const speed = 85;
+      const delayBeforeDeleting = 1600;
+      const delayBeforeTypingAgain = 300;
+
+      function typeText(){
+        const el = document.getElementById("typing-text");
+        if(!el) return;
+
+        const current = texts[tIndex];
+
+        if(isDeleting){
+          el.textContent = current.substring(0, cIndex);
+          cIndex--;
+          if(cIndex < 0){
+            isDeleting = false;
+            tIndex = (tIndex + 1) % texts.length;
+            setTimeout(typeText, delayBeforeTypingAgain);
+          } else {
+            setTimeout(typeText, speed / 2);
+          }
+        } else {
+          el.textContent = current.substring(0, cIndex);
+          cIndex++;
+          if(cIndex > current.length){
+            isDeleting = true;
+            setTimeout(typeText, delayBeforeDeleting);
+          } else {
+            setTimeout(typeText, speed);
+          }
+        }
+      }
+      window.addEventListener("load", () => setTimeout(typeText, delayBeforeTypingAgain));
+
+      // Contact form -> WhatsApp prefill
       const form = document.getElementById("leadForm");
       form?.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -1256,11 +1282,6 @@
         const text = encodeURIComponent(lines.join("\n"));
         window.open(`${WA}?text=${text}`, "_blank", "noopener");
       });
-
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      window.addEventListener("hashchange", route);
-      route();
     })();
   </script>
 </body>
